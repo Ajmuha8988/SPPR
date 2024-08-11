@@ -1,0 +1,472 @@
+﻿<Window x:Class="KubKha.Pilotprojekt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KubKha"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Height="640" ResizeMode="NoResize" Width="820" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid x:Name="grid">
+        <Border MouseDown="MovingWin" Height="25" Background="#f0f2f5"  Panel.ZIndex="1" VerticalAlignment="Top" >
+            <Button  Width="40" Background="Red" BorderBrush="Black" Foreground="White" FontSize="15" Canvas.Left="780" BorderThickness="1" Height="25" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Right">X</Button>
+        </Border>
+        <Button Width="40" BorderBrush="Black" Panel.ZIndex="2" HorizontalAlignment="Right"  Foreground="White" FontSize="15" Canvas.Left="740" BorderThickness="1" Height="25" VerticalAlignment="Top" Click="Button_Click1" Content="" Margin="0,0,40,0">
+            <Button.Background>
+                <ImageBrush ImageSource="/free-icon-full-screen-8669501.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Width="40" Background="Transparent" Panel.ZIndex="2" BorderBrush="Black" Foreground="Black" FontSize="15" FontWeight="UltraBold" Canvas.Left="780" BorderThickness="1" Height="25" VerticalAlignment="Top" Click="Button_Click2" HorizontalAlignment="Right" Margin="0,0,80,0" Content="________"/>
+        <Image x:Name="image" Height="250" Opacity="1"  Panel.ZIndex="0" Margin="0, 0, 0, 0" Source="/Wallpapers/Города_Архитектура_Здание.jpg" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <PasswordBox VerticalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="18" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="0" x:Name="password" Margin="0,100,0,0"/>
+        <TextBox VerticalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="18" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="0" x:Name="login" Margin="0,0,0,0"/>
+        <Label HorizontalAlignment="Center" FontSize="25" FontFamily="Georgia" VerticalAlignment="Center" Foreground="Gray" Content="свои логин и пароль" Name="l6" Opacity="0" Margin="0,0,0,150" />
+        <Label HorizontalAlignment="Center" FontSize="25" FontFamily="Georgia" VerticalAlignment="Center" Foreground="Gray" Content="Пожалуйста, введите" Name="l5" Opacity="0" Margin="0,0,0,200" />
+        <Label HorizontalAlignment="Center" FontSize="35" FontFamily="Georgia" VerticalAlignment="Center" Foreground="Black" Margin="0,0,0,350" Opacity="0" Name="l4" >Введите данные</Label>
+        <Label HorizontalAlignment="Center" FontSize="35" FontFamily="Georgia" VerticalAlignment="Center" Foreground="Black" Margin="0,0,0,50" Opacity="1" Name="l1" >Pilotprojekt</Label>
+        <Label HorizontalAlignment="Center" FontSize="25" FontFamily="Georgia" VerticalAlignment="Center" Foreground="Gray" Content="Добро пожаловать на официальное" Name="l2" Opacity="1" Margin="0,60,0,0" />
+        <Label HorizontalAlignment="Center" FontSize="25" FontFamily="Georgia" VerticalAlignment="Center" Foreground="Gray" Margin="0,115,0,0" Content="приложение Pilotprojekt" Name="l3" Opacity="1" />
+        <Button x:Name="back" HorizontalAlignment="Left" Height="30" Width="30" VerticalAlignment="Center" BorderThickness="0,0,0,0" Margin="20,0,0,0" Opacity="0" >
+            <Button.Background>
+                <ImageBrush ImageSource="/free-icon-left-arrow-271218.png"/>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="password" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,100,0,0"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,700,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="login" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,0"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,700,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l4" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,350"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,700,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l5" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,200"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,700,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l6" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,150"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,700,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="back" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="20,0,0,500" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="20,0,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="begin" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,300,0,0"  >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="begin1" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,300,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,700,0,0"  >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="image" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,700" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0, 0, 0, 420" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l1" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,0,0,50" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l2" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,60,0,0" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l3" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,115,0,0" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="password" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="login" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l4" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l5" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l6" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="begin" Storyboard.TargetProperty="Opacity" From="0" To="0.3" Duration="00:00:0.2" >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="begin1" Storyboard.TargetProperty="Opacity" From="0.3" To="0" Duration="00:00:0.2" >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="image" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l1" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l2" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l3" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Width="350" x:Name="begin1" FontFamily="Georgia" Background="Black" Opacity="0" Panel.ZIndex="3" Foreground="White" Click="authorization" Content="Продолжить" Height="50" FontSize="25" Margin="0,300,0,0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Width="350" x:Name="begin" FontFamily="Georgia" Background="Black" Opacity="0.3" Panel.ZIndex="3" Foreground="White" Content="Приступить к работе" Height="50" FontSize="25" Margin="0,300,0,0">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="password" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,100,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="login" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,0,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l4" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,0,0,350" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l5" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00"  Value="0,700,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2"  Value="0,0,0,200" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l6" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0"/>
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,0,0,150" >
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="back" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="20,0,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="20,0,0,500" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="begin" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,300,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,700,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="begin1" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,700,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,300,0,0" >
+
+                                </SplineThicknessKeyFrame>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="image" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0, 0, 0, 420" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,0,0,700" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l1" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,50" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,700,0,0" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l2" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,60,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,700,0,0" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="l3" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,115,0,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.2" Value="0,700,0,0" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2" >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="begin" Storyboard.TargetProperty="Opacity" From="0.3" To="0" Duration="00:00:0.2" >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="begin1" Storyboard.TargetProperty="Opacity" From="0" To="0.3" Duration="00:00:0.2" >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="image" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l1" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l2" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l3" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.2">
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="password" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="login" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l4" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l5" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"  >
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="l6" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"  ></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Viewbox x:Name="Bossviewbox" Opacity="1" Margin="2000,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas Width="820" Height="200">
+                <Button x:Name="Buttonmenu"  HorizontalAlignment="Left" Panel.ZIndex="1" VerticalAlignment="Top"  Height="35" Width="70" Margin="0,30,0,0" BorderThickness="0,0,0,0" Click="MenuBoss">
+                    <Button.Background>
+                        <ImageBrush  Stretch="Uniform" ImageSource="/Views/Boss/free-icon-menu-1828859.png"/>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="Shadow" Storyboard.TargetProperty="Opacity" From="0" To="0.5" Duration="00:00:0.2"></DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetName="Menu" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"></DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetName="Menu" Storyboard.TargetProperty="Width" From="0" To="270" Duration="00:00:0.2"></DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetName="Shadow" Storyboard.TargetProperty="Width" From="0" To="820" Duration="00:00:0.01"></DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetName="maingrid" Storyboard.TargetProperty="Opacity" From="1" To="0.5" Duration="00:00:0.2"></DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetName="ListProject" Storyboard.TargetProperty="Opacity" From="1" To="0.5" Duration="00:00:0.2"></DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Border Panel.ZIndex="1" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="35" BorderThickness="1" CornerRadius="20" BorderBrush="Black" Background="#f0f2f5"  Margin="70,30,0,0" Grid.ColumnSpan="2" >
+                    <TextBox Name="searcher" Width="170" Height="30" FontSize="23" Background="#f0f2f5" FontFamily="georgia"  BorderThickness="0" TextChanged="searchTextBox_TextChanged">
+                    </TextBox>
+                </Border>
+                <Border Name="Shadow" Width="820" Height="640" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Black" Opacity="0" Panel.ZIndex="0" MouseDown="Shadow_MouseDown">
+                </Border>
+                <Border x:Name="Menu" Width="0" Height="640" VerticalAlignment="Center"  HorizontalAlignment="Left" Background="White" Opacity="1" Panel.ZIndex="1">
+                    <Grid>
+                        <Label FontSize="23" HorizontalAlignment="Center" Margin="0, 17, 0, 0" FontFamily="georgia" Opacity="1" Content="GAs"  Name="AuthBoss"></Label>
+                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" X1="0" Y1="55" X2="270" Y2="55" Stroke="Black" StrokeThickness="1" ></Line>
+                        <Button x:Name="ButtonAddTeam" HorizontalAlignment="Left"  VerticalAlignment="top" FontSize="20" Height="40" Width="250" Background="Transparent" Margin="10, 60, 0, 0" FontFamily="georgia" BorderThickness="0, 0, 0, 0" Click="ButtonAddTeam_Click" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                            Добавить команду
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="BossPage" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.1"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="mainborder" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.1"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <Button x:Name="ButtonAddAnalitics" HorizontalAlignment="Left" Content="Добавить сотрудника" VerticalAlignment="top" FontSize="20" Height="40" Width="250" Background="Transparent" Margin="10, 100, 0, 0" FontFamily="georgia" BorderThickness="0, 0, 0, 0" Click="ButtonAddAnalytics_Click" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="BossPage" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.1"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="mainborder" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.1"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <Button x:Name="Change_boss" HorizontalAlignment="Left" Content="Редактировать профиль" VerticalAlignment="top" FontSize="20" Height="40" Width="250" Background="Transparent" Margin="10, 140, 0, 0" FontFamily="georgia" BorderThickness="0, 0, 0, 0" Click="ButtonChangeBoss_Click" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="BossPage" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.1"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="mainborder" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="00:00:0.1"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Frame x:Name="BossPage" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" Width="0" Height="640" Canvas.Left="300" Panel.ZIndex="0" Opacity="0" FontSize="10">
+                </Frame>
+                <ItemsControl  FontFamily="Georgia" FontSize="30" Name="ListProject" Width="300" Height="560" Background="White" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Top="80" Opacity="1" Panel.ZIndex="0">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate >
+                            <Button Content="{Binding Path=name}" Click="DataBossClick" x:Name="ListBossButtons" FontSize="30" FontFamily="georgia" Background="White" Height="50" BorderThickness="0" Width="250">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="10"></Setter>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Line X1="300" X2="300" Y1="0" Y2="640" Stroke="Black" StrokeThickness="0.5" Opacity="0.4" Panel.ZIndex="1"></Line>
+                <Border Name="mainborder" Width="520" Height="640" Canvas.Left="300" Panel.ZIndex="1" Opacity="1" >
+                    <Grid Width="520" Height="640" x:Name="maingrid">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Views/Boss/110289-gorizont-organizaciya-den-dom-zheltyj-x750.jpg"/>
+                        </Grid.Background>
+                        <Label FontFamily="georgia" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" Margin="0,0,0,50" >Добро пожаловать!</Label>
+                        <Label FontFamily="georgia" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Margin="20,30, 0, 0" >чтобы приступить, нажмите на</Label>
+                        <Button x:Name="Buttonmenuinpage"  HorizontalAlignment="Right" Panel.ZIndex="1" VerticalAlignment="Center"  Height="35" Width="70" Margin="0,30,40,0" BorderThickness="0,0,0,0" Click="Buttonmenuinpage_Click" >
+                            <Button.Background>
+                                <ImageBrush  Stretch="Uniform" ImageSource="/Views/Boss/free-icon-menu-1828859.png"/>
+                            </Button.Background>
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Shadow" Storyboard.TargetProperty="Opacity" From="0" To="0.5" Duration="00:00:0.2"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="Menu" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="Menu" Storyboard.TargetProperty="Width" From="0" To="270" Duration="00:00:0.2"></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName="Shadow" Storyboard.TargetProperty="Width" From="0" To="820" Duration="00:00:0.01"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Border Name="infoborder" Canvas.Left="300" Panel.ZIndex="0" Opacity="0" >
+                    <Grid Width="520" Height="640" Background="White" Name="Infogrid" Opacity="0">
+                        <DataGrid Height="auto" Margin="0,20,0,0"  Width="auto" Name="Listofteams" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="Id" Width="50" Binding="{Binding Path=idteam}" ></DataGridTextColumn>
+                                <DataGridTextColumn  Header="Имя" Width="100" Binding="{Binding Path=name}"></DataGridTextColumn>
+                                <DataGridTextColumn  Header="Средство" Width="150" Binding="{Binding Path=money}"></DataGridTextColumn>
+                                <DataGridTextColumn  Header="Описание" Width="310" Binding="{Binding Path=description}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Georgia" Content="Список работ" Margin="0,0,0,400"></Label>
+                        <DataGrid Height="auto" Margin="0,150,0,0"  Width="auto" Name="Listofusers" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="Логин" Width="200" Binding="{Binding Path=login}" ></DataGridTextColumn>
+                                <DataGridTextColumn  Header="Результат" Width="310" Binding="{Binding Path=score}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+                <Border Name="ChangeBossborder" Width="0" Height="640" Canvas.Left="300" Panel.ZIndex="0" Opacity="0" >
+                    <Grid Width="520" Height="640" Background="White">
+                        <Label FontFamily="georgia" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,30,0,0">Редактировать профиль</Label>
+                        <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,100,0,0">Логин</Label>
+                        <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="LoginBoss" Margin="0,130,0,0" />
+                        <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,160,0,0">Пароль</Label>
+                        <PasswordBox  MaxLength="10" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="passwordboss" Margin="0,190,0,0">
+                        </PasswordBox>
+                        <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,220,0,0">Фамилия</Label>
+                        <TextBox  VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="LastnameBoss" Margin="0,250,0,0"/>
+                        <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,280,0,0">Имя</Label>
+                        <TextBox  VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="FirstnameBoss" Margin="0,310,0,0"/>
+                        <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,340,0,0" >Отчество</Label>
+                        <TextBox  VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="PatronymicBoss" Margin="0,370,0,0"/>
+                        <Button FontFamily="Georgia" Background="Black" Opacity="0.3" Foreground="White" x:Name="ButtonChangeBoss" FontSize="15" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,450,0,0" Click="ChangeBoss_Click">
+                            Сохранить
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Border>
+            </Canvas>
+        </Viewbox>
+        <Viewbox x:Name="MainMenuAnalytic" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="1" Margin="2000,0,0,0">
+            <Canvas Width="820" Height="200">
+                <Grid>
+                    <Button x:Name="Buttonmenuanalytics"  HorizontalAlignment="Left" Panel.ZIndex="1" VerticalAlignment="Top"  Height="35" Width="70" Margin="0,30,0,0" BorderThickness="0,0,0,0" Click="MenuAnalytic_click">
+                        <Button.Background>
+                            <ImageBrush  Stretch="Uniform" ImageSource="/Views/Boss/free-icon-menu-1828859.png"/>
+                        </Button.Background>
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ShadowBorderAnalytic" Storyboard.TargetProperty="Opacity" From="0" To="0.5" Duration="00:00:0.2"></DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="MenuBorderAnanlytc" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="00:00:0.2"></DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="MenuBorderAnanlytc" Storyboard.TargetProperty="Width" From="0" To="270" Duration="00:00:0.2"></DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="ShadowBorderAnalytic" Storyboard.TargetProperty="Width" From="0" To="820" Duration="00:00:0.01"></DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Border Name="ShadowBorderAnalytic" Width="820" Height="640" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Black" Opacity="0" Panel.ZIndex="0" MouseDown="Shadow_MouseDown_analytic">
+                    </Border>
+                    <Border x:Name="MenuBorderAnanlytc" Width="0" Height="640" VerticalAlignment="Center"  HorizontalAlignment="Left" BorderBrush="Black" Background="White" Opacity="1" Panel.ZIndex="1" BorderThickness="0,0,1,0">
+                        <Grid>
+                            <Label FontFamily="georgia" Name="Loginanalytic" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,30,0,0"></Label>
+                            <Border x:Name="ChangeInfoAnalytic" BorderBrush="Black" BorderThickness="0,1,0,1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="540" Width="270" Margin="0,100,0,0">
+                                <Grid>
+                                    <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Foreground="Black">Фамилия</Label>
+                                    <TextBox  VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Margin="0,50,0,0"  Foreground="Black" Width="250" Opacity="1" x:Name="Lastnameanalytic" />
+                                    <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0,80,0,0"  Foreground="Black" >Имя</Label>
+                                    <TextBox  VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Margin="0,110,0,0" Foreground="Black" Width="250" Opacity="1" x:Name="Firstnameanalytic" />
+                                    <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,140,0,0" >Отчество</Label>
+                                    <TextBox  VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Margin="0,170,0,0"  Width="250" Opacity="1" x:Name="Patronymicanalytic" />
+                                    <Button FontFamily="Georgia" Background="Black" Opacity="0.3" Foreground="White" x:Name="ButtonChangeAnalytics" FontSize="15" Height="30" Width="200" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Click="ChangeAnanlytic_Click">
+                                        Сохранить
+                                        <Button.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="5"></Setter>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Height="250" Margin="0,25,0,0" BorderBrush="Black" Name="Graphics"  BorderThickness="1,0,0,1" HorizontalAlignment="Right" VerticalAlignment="Top" Width="600">
+                        <Grid>
+                            <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" >
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis Title="Капитал" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+                                </lvc:CartesianChart.AxisY>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis Title="Месяц" Labels="{Binding Labels}"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                            </lvc:CartesianChart>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Window>
