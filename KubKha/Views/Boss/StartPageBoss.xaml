@@ -1,0 +1,32 @@
+﻿<Page x:Class="KubKha.Views.Boss.StartPageBoss"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KubKha.Views.Boss"
+      mc:Ignorable="d" 
+      Title="StartPageBoss">
+
+    <Grid Width="520" Height="640" Background="White">
+        <Label FontFamily="georgia" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,30,0,0" >Создание команды</Label>
+                <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,100,0,0" >Имя команды</Label>
+                <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="TeamName" Margin="0,130,0,0" />
+                <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,160,0,0" >ID команды</Label>
+                <TextBox  MaxLength="10" PreviewTextInput="NumberTextBox_PreviewTextInput" TextChanged="NumberTextBox_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="IDTeam" Margin="0,190,0,0">
+                </TextBox>
+                <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,220,0,0" >Средство на стартап(необязательно)</Label>
+                <TextBox MaxLength="10" PreviewTextInput="NumberTextBox_PreviewTextInput" TextChanged="NumberTextBox_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 1" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="250" Opacity="1" x:Name="TeamMoney" Margin="0,250,0,0"/>
+                <Label FontFamily="georgia" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Margin="0,280,0,0" >Описание(необязательно)</Label>
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Height="100" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" VerticalAlignment="Top" Height="92" HorizontalAlignment="Center" BorderThickness="0, 0, 0, 0" FontSize="15" FontFamily="Georgia" Foreground="Black" Width="240" Opacity="1" x:Name="TeamDescription" Margin="0,3,0,0"></TextBox>
+                </Border>
+        <Button FontFamily="Georgia" Background="Black" Opacity="0.3" Foreground="White" x:Name="ButtonAddTeam" FontSize="15" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,450,0,0" Click="ButtonAddTeam_Click">
+            Создать команду
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>
